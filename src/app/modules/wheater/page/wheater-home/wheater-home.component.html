@@ -1,0 +1,29 @@
+<div class="header">
+  <h1>Bem Vindo ao Clima Tempo</h1>
+</div>
+
+
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input
+    type="text"
+    placeholder="Buscar Localização"
+    name="city"
+    [(ngModel)]="initialCityName"
+    />
+    <span (click)="onSubmit()">
+      <fa-icon
+        animation='fade'
+        style="--fa-animation-duration: 5s; cursor: pointer"
+        size="lg"
+        class="search-icon"
+        [icon]="searchIcon"
+        (click)="onSubmit()"
+        >
+      </fa-icon>
+    </span>
+  </form>
+
+</div>
+<app-wheater-card *ngIf="wheatherDatas" [wheaterDatasInput]="wheatherDatas"></app-wheater-card>
+
